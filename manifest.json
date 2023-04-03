@@ -1,12 +1,10 @@
 {
-    "name":"JobsTBD Easy Apply",
-    "version":"0.0.0.1",
+    "name":"JobsTBD One Click Apply",
+    "version":"0.0.0.2",
     "description":"Apply for any job with one click",
     "permissions":[
-        "tabs",
         "storage",
-        "activeTab",
-        "cookies"
+        "activeTab"
     ],
     "icons": {
         "16": "/icons/16.png",
@@ -15,7 +13,9 @@
         "128": "/icons/128.png"
       },
     "host_permissions":[
-        "https://jobstbd.com/*"
+        "https://jobstbd.com/*",
+        "http://localhost:3000/*"
+
     ],
     "background":{
         "service_worker":"background.js"
@@ -31,7 +31,7 @@
     ],
     "action":{
         "default_popup":"popup/index.html",
-        "default_title":"JobsTBD Easy Apply"
+        "default_title":"JobsTBD One Click Apply"
     },
     "manifest_version":3
 }
