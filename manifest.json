@@ -1,6 +1,6 @@
 {
-    "name":"JobsTBD Easy Apply",
-    "version":"0.0.0.1",
+    "name":"JobsTBD One Click Apply",
+    "version":"0.0.0.2",
     "description":"Apply for any job with one click",
     "permissions":[
         "tabs",
@@ -31,7 +31,7 @@
     ],
     "action":{
         "default_popup":"popup/index.html",
-        "default_title":"JobsTBD Easy Apply"
+        "default_title":"JobsTBD One Click Apply"
     },
     "manifest_version":3
 }

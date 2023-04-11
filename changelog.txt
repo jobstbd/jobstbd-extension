@@ -1,0 +1,12 @@
+0.0.2
+
+- Background job changed to listen every tab open (only for jobstbd.com).
+- Upload CV implemented
+
+
+
+0.0.1
+
+- Select CV
+- Apply job
+

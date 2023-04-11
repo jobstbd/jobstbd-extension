@@ -2,7 +2,7 @@
   <head>
     <script src="tailwind.js"></script>
   </head>
-  <body  class="min-w-[300px]  relative">
+  <body  class="min-w-[300px] relative">
     <div class="m-2 border border-2 border-gray-200  shadow-xl">
       
       <div id="loading">
@@ -37,8 +37,18 @@
           <h1>Apply for any job with one click.</h1>
         </div>
         <div class="p-2">
-          Select your CV
+          
         </div>
+        <label for="dropzone-file">
+          Select your CV or <span class="text-md text-blue-800">upload</span> a new one.
+          <input
+              class="hidden"
+              id="dropzone-file"
+              accept="application/msword, application/pdf"
+              type="file"
+          />
+        </label>
+       
         <div id="cvList" class="p-2">
     
         </div>
