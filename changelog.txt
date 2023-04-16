@@ -1,11 +1,15 @@
-0.0.2
+0.0.0.3
+
+- Endpoint URLs changed in order to prevent conflicts.
+
+0.0.0.2
 
 - Background job changed to listen every tab open (only for jobstbd.com).
 - Upload CV implemented
 
 
 
-0.0.1
+0.0.0.1
 
 - Select CV
 - Apply job
