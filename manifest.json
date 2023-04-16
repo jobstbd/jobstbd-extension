@@ -1,6 +1,6 @@
 {
     "name":"JobsTBD One Click Apply",
-    "version":"0.0.0.2",
+    "version":"0.0.0.3",
     "description":"Apply for any job with one click",
     "permissions":[
         "tabs",
@@ -15,7 +15,7 @@
         "128": "/icons/128.png"
       },
     "host_permissions":[
-        "https://jobstbd.com/*"
+        "https://jobstbd.com/*",
     ],
     "background":{
         "service_worker":"background.js"

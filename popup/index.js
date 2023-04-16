@@ -1,10 +1,11 @@
 
 //chrome.storage.local.set({ 'token': null })
 let selectedProfile = null;
+const apiURL = "https://jobstbd.com/api/extension/0.0.0.3";
 
 async function getProfiles(token) {
 
-    let profiles = await fetch('https://jobstbd.com/api/talent/profile', {
+    let profiles = await fetch(`${apiURL}/target`, {
         headers: {
             'Authorization': `Bearer ${token}`,
         }
@@ -28,64 +29,6 @@ async function getProfiles(token) {
     }
 
 }
-
-// function addCVUploadChangeEvent(token) {
-
-//     const fileInput = document.querySelector("#dropzone-file");
-
-//     fileInput.addEventListener("change", async () => {
-
-//         if (fileInput.files.length > 0) {
-
-
-//             const file = fileInput.files[0];
-//             let data = await fetch(`https://jobstbd.com/api/s3/cvUpload`, {
-//                 method: "POST",
-//                 Authorization: `Bearer ${token}`,
-//                 body: JSON.stringify({
-//                     name: `${file?.name}`,
-//                     type: file.type,
-//                     extension: file.name.split(".")[1]
-//                 })
-//             })
-//             const { url, fileName } = await data.json();
-
-//             await fetch(url, {
-//                 method: "PUT",
-//                 body: file,
-//                 headers: {
-//                     "Content-type": file.type,
-//                     "Access-Control-Allow-Origin": "*"
-//                 }
-//             });
-
-//             console.log('resume ', token);
-
-//             const result = await fetch("https://jobstbd.com/api/talent/resume", {
-//                 method: "POST",
-//                 headers: {
-//                     'Authorization': `Bearer ${token}`,
-//                 },
-//                 body: JSON.stringify({
-//                     file_name: file.name,
-//                     s3_file_name: `${fileName}`,
-//                 }),
-//             });
-
-//             if (result.status == 404) {
-
-//                 // chrome.storage.local.set({ 'token': null })
-
-//                 main()
-//             }
-
-//             selectCV(null, token)
-
-//         }
-
-//     });
-// }
-
 
 function loadingActive() {
     document.getElementById("loading").style.display = "block";
@@ -117,9 +60,9 @@ async function applyJob(token) {
             let response;
             try {
 
-                response = await fetch('https://jobstbd.com/api/talent/application', {
+                response = await fetch(`${apiURL}/application`, {
                     method: 'POST',
-                    body: JSON.stringify({ url: url, profileId: selectedProfile }),
+                    body: JSON.stringify({ url: url, targetId: selectedProfile }),
                     headers: {
                         'Authorization': `Bearer ${token} `,
                     }
@@ -156,7 +99,7 @@ function main() {
         }
         else {
             try {
-                let tokenValidate = await fetch('https://jobstbd.com/api/auth/validateToken', {
+                let tokenValidate = await fetch(`${apiURL}/validateToken`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     }
